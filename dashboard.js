@@ -21,4 +21,24 @@ const total= parseFloat(currentDepositAmmount)+parseFloat(depositAmmount);
 
  depositFeild.value="";
 
+});
+document.getElementById('withdraw-btn').addEventListener('click',function(){
+    const withdrawAmountField =document.getElementById('total-withdraw');
+    const currentwithdrawAmmount=withdrawAmountField.innerText;
+   
+    const withdrawFeild=document.getElementById('withdraw-ammount');
+const withdrawAmmount=withdrawFeild.value;
+ 
+console.log(withdrawAmmount);
+ const totalWithdraw= parseFloat(withdrawAmmount)+parseFloat(currentwithdrawAmmount);
+ 
+ withdrawAmountField.innerText=totalWithdraw;
+
+ 
+ const balanceField =document.getElementById('Total-balance');
+ const balanceAmmount=balanceField.innerText;
+  const newTotalBalance=parseFloat(balanceAmmount)-parseFloat(withdrawAmmount);
+   
+  balanceField.innerText=newTotalBalance;
+
 })
